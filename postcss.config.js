@@ -1,10 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}'
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import tailwindcss from 'tailwindcss';
+
+/** @type {import('postcss').Config} */
+const config = {
+  plugins: [
+    tailwindcss,
+    autoprefixer,
+    cssnano,
   ],
-  theme: {
-    extend: {}
-  },
-  plugins: [require('@tailwindcss/typography')]
-}
+};
+
+export default config;

@@ -1,6 +1,6 @@
-import { createStore } from 'redux'
-import { todoReducer } from '.'
-import { composeWithDevTools} from '@redux-devtools/extension'
+// store.ts
+import { createStore } from 'redux';
+import rootReducer from './rootReducer';
 
-export const store:any = createStore(todoReducer, composeWithDevTools());
-
+export const store = createStore(rootReducer);
+export type AppDispatch = typeof store.dispatch;
